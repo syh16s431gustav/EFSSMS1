@@ -22,16 +22,5 @@ namespace EFAdressBook.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection List {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["List"]));
-            }
-            set {
-                this["List"] = value;
-            }
-        }
     }
 }
