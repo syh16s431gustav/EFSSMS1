@@ -12,5 +12,6 @@ namespace EFAdressBook
     public class ContactContext : DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
+
     }
 }

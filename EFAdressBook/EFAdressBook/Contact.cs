@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.Reflection;
 
 namespace EFAdressBook
 {
@@ -17,5 +19,14 @@ namespace EFAdressBook
         public string Email { get; set; }
         public DateTime BirthDay { get; set; }
 
+        public void DeleteContact(int selectedItemId)
+        {
+            using (var context = new ContactContext())
+            {
+                var itemToRemove = context.Contacts.SingleOrDefault(x => x.ContactId == selectedItemId);
+                context.Contacts.Remove(itemToRemove);
+                context.SaveChanges();
+            }
+        }
     }
 }

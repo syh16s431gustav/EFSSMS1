@@ -44,11 +44,15 @@
             this.lblBirthDay = new System.Windows.Forms.Label();
             this.dTPickerBirthDay = new System.Windows.Forms.DateTimePicker();
             this.lstBoxContacts = new System.Windows.Forms.ListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtBoxSearchbar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(120, 347);
+            this.btnSave.Location = new System.Drawing.Point(102, 347);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(76, 31);
             this.btnSave.TabIndex = 0;
@@ -172,16 +176,62 @@
             // 
             this.lstBoxContacts.FormattingEnabled = true;
             this.lstBoxContacts.ItemHeight = 16;
-            this.lstBoxContacts.Location = new System.Drawing.Point(404, 60);
+            this.lstBoxContacts.Location = new System.Drawing.Point(387, 60);
             this.lstBoxContacts.Name = "lstBoxContacts";
-            this.lstBoxContacts.Size = new System.Drawing.Size(216, 260);
+            this.lstBoxContacts.Size = new System.Drawing.Size(287, 260);
             this.lstBoxContacts.TabIndex = 16;
+            this.lstBoxContacts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstBoxContacts_MouseClick);
+            this.lstBoxContacts.SelectedValueChanged += new System.EventHandler(this.lstBoxContacts_SelectedValueChanged);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(480, 340);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(86, 44);
+            this.btnRemove.TabIndex = 17;
+            this.btnRemove.Text = "Remove contact";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(194, 347);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(76, 31);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(143, 397);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(76, 31);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // txtBoxSearchbar
+            // 
+            this.txtBoxSearchbar.Location = new System.Drawing.Point(387, 32);
+            this.txtBoxSearchbar.Name = "txtBoxSearchbar";
+            this.txtBoxSearchbar.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxSearchbar.TabIndex = 21;
+            this.txtBoxSearchbar.Text = "Searchbar";
+            this.txtBoxSearchbar.TextChanged += new System.EventHandler(this.txtBoxSearchbar_TextChanged);
+            this.txtBoxSearchbar.Enter += new System.EventHandler(this.txtBoxSearchbar_Enter);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 418);
+            this.ClientSize = new System.Drawing.Size(705, 440);
+            this.Controls.Add(this.txtBoxSearchbar);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lstBoxContacts);
             this.Controls.Add(this.dTPickerBirthDay);
             this.Controls.Add(this.lblBirthDay);
@@ -223,6 +273,10 @@
         private System.Windows.Forms.Label lblBirthDay;
         private System.Windows.Forms.DateTimePicker dTPickerBirthDay;
         private System.Windows.Forms.ListBox lstBoxContacts;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtBoxSearchbar;
     }
 }
 
