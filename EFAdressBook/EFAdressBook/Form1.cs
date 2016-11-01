@@ -88,7 +88,10 @@ namespace EFAdressBook
         void CheckIfSelectedItem()
         {
             if (lstBoxContacts.SelectedIndex == -1)
+            {
                 MessageBox.Show("Please select an item first");
+                hasSelectedItem = false;
+            }
             else
                 hasSelectedItem = true;
         }
