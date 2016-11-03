@@ -143,7 +143,8 @@ namespace EFAdressBook
         {
             if ((ClearedSearchbarText))
             {
-                var results = ContactsList.Where(c => c.Name.ToLower().Contains(txtBoxSearchbar.Text.ToLower()));
+                string sT = txtBoxSearchbar.Text;
+                var results = ContactsList.Where(c => c.Name.ToLower().Contains(sT.ToLower()) || c.StreetAddress.ToLower().Contains(sT.ToLower()) || c.PostCode.ToLower().Contains(sT.ToLower()) || c.City.ToLower().Contains(sT.ToLower()) || c.Telephone.ToLower().Contains(sT.ToLower()) || c.Email.ToLower().Contains(sT.ToLower()) || c.BirthDay.ToString("yyyyMMdd").ToLower().Contains(sT.ToLower()));
                 lstBoxContacts.DataSource = results.ToList();
             }
         }
